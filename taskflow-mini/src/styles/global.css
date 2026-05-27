@@ -1,0 +1,88 @@
+/* ============================================================
+   Global reset, CSS custom properties, and shared utility classes.
+   All component-specific styles live in their own CSS files.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palette */
+  --color-bg:                #f5f7fa;
+  --color-surface:           #ffffff;
+  --color-border:            #e2e8f0;
+  --color-text-primary:      #1a202c;
+  --color-text-secondary:    #718096;
+
+  /* Brand */
+  --color-primary:           #4f46e5;
+  --color-primary-hover:     #4338ca;
+
+  /* Actions */
+  --color-danger:            #e53e3e;
+  --color-danger-hover:      #c53030;
+  --color-secondary-btn:     #edf2f7;
+  --color-secondary-btn-hover: #e2e8f0;
+
+  /* Misc */
+  --radius:  8px;
+  --shadow:  0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --font:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Shared button styles ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn--primary              { background-color: var(--color-primary);       color: #fff; }
+.btn--primary:hover        { background-color: var(--color-primary-hover); }
+.btn--secondary            { background-color: var(--color-secondary-btn);       color: var(--color-text-primary); }
+.btn--secondary:hover      { background-color: var(--color-secondary-btn-hover); }
+.btn--danger               { background-color: var(--color-danger);       color: #fff; }
+.btn--danger:hover         { background-color: var(--color-danger-hover); }
+.btn--sm                   { padding: 4px 10px; font-size: 12px; }
+
+/* ---- Shared badge styles ---- */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+/* Priority */
+.priority--low    { background: #ebf8ff; color: #2b6cb0; }
+.priority--medium { background: #fefcbf; color: #975a16; }
+.priority--high   { background: #fff5f5; color: #c53030; }
+
+/* Status */
+.status--todo        { background: #f7fafc; color: #4a5568; border: 1px solid var(--color-border); }
+.status--in-progress { background: #ebf8ff; color: #2c5282; }
+.status--done        { background: #f0fff4; color: #276749; }
